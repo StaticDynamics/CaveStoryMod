@@ -1,0 +1,77 @@
+=== How to Write Plugins for the Physics Editor ===
+================= By Carrotlord ===================
+
+Plugins are a way for users to extend the functionality of the Cave Story
+Physics Editor. Normally you can only edit player agility and a handful of
+weapons, but you can also write plugins that let you edit many more things.
+
+Plugins consist of two parts: code and settings. The code reads data from the
+settings, which are values inputted by the plugin's user, and then modifies the
+executable according to those settings.
+
+These plugins are written in Mint, a programming language I designed that runs
+on a Java interpreter.
+
+Now let's write some code:
+
+*** Plugin 1: Behemoth Speed Change ***
+setText("BehemothLeftSpeed=-256")
+waitForUserInput()
+import type
+speed = int(readKeyValue("BehemothLeftSpeed"))
+hex = littleEndian(speed)
+gName = getGameName()
+import file
+writeHex(gName, hex, 159032)
+display("Speed written to exe.")
+
+To use a plugin, hit the plugins button on the upper menu bar and click on
+"Add a Plugin". Also you can use the keyboard shortcuts if you wish.
+Switch to the newly created tab.
+
+Next, paste in the Mint code for the plugin.
+Then, click on the "Execute Plugin Code" button in the plugins menu.
+Now edit the settings that appear in the textbox.
+Finally, click on "Apply Plugin to Executable" in the plugins menu.
+
+If you change the behemoth's leftward speed to something like -2000, you will
+see that the behemoth now moves much faster in the left direction. Good.
+
+The waitForUserInput() function will wait until the user finishes editing the
+settings before performing more code.
+
+readKeyValue(key) will read the value from key=value in the settings.
+
+littleEndian(integer) will change an integer into 4 bytes of hexadecimal
+data.
+
+Let's attempt something slightly more complicated.
+
+*** Plugin 2: Speed Up with Flags ***
+setText("SpeedChange=Add 800 to player's speed if flag 200 is set.")
+waitForUserInput()
+change = readKeyValue("SpeedChange")
+lst = change.split(" ")
+import type
+speedUp = littleEndian(int(lst[1]))
+flag = littleEndian(int(lst[7]))
+gName = getGameName()
+import file
+writeHex(gName, "E9D0E007009090", 87839)
+code = "6800410000E832B1F7FF83C40483F801"
+code += "7513C745EC2C0300008145ECF4010000"
+code += "E90D1FF8FFC745EC2C030000EBF2"
+writeHex(gName, code, 604148)
+writeHex(gName, speedUp, 604176)
+writeHex(gName, flag, 604149)
+
+Change the two numbers in the sentence and you will add some number to
+the player's max horizontal speed when a certain flag is set.
+To disable the feature, use 0 as the speed.
+
+If you would like to know more about the Mint programming language or use
+it as a standalone coding platform, please download Mint 1.3 from:
+
+http://thezerothblog.wordpress.com/2012/07/03/mint-1-3/
+
+It comes with a tutorial.

@@ -1,0 +1,19 @@
+
+
+OrgMaker 2.1.0x English
+
+
+  Original project by Studio Pixel (studiopixel.sakura.ne.jp)
+
+  Version 2 developed by Rxo Inverse
+  http://www5b.biglobe.ne.jp/~kiss-me/aji/organya2.html
+
+  English translation by Bavi_H (rnhart.net)
+
+
+Drums
+
+  drums.htm contains information about which drums to choose for compatibility
+  with Cave Story or with other versions of OrgMaker.
+
+

@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>OrgMaker 2.1.0x English Drum Compatibility</title>
+<style>
+body { background: white; color: black; font-family: Verdana, Arial, sans-serif; }
+table { border-collapse: collapse; margin-bottom: 2em; }
+th, td { text-align: center; border-bottom: 1px solid #bbb; }
+th.drum { text-align: right; padding-right: 0.7em; }
+td { border: 1px solid #bbb; }
+.ok { background: #cfc; }
+.swap { background: #ffc; }
+.diff { background: #fec; }
+.bad { background: #fcc; }
+p.q { font-weight: bold; }
+
+</style>
+</head>
+<body>
+
+<h1>OrgMaker 2.1.0x English Drum Compatibility</h1>
+
+<p class="q">
+I'm using OrgMaker 2.1.0x English to compose an ORG file that I will insert into a Cave Story mod. What drums should I use?</p>
+
+<p>See section <a href="#cave-story">Cave Story</a>.</p>
+
+<p class="q">
+When I compose in OrgMaker 2.1.0x English, will the drums work in other versions of OrgMaker?</p>
+
+<p>See section <a href="#org-maker-versions">Other OrgMaker versions</a>.</p>
+
+<hr size="1">
+
+<h2 id="cave-story">Cave Story</h2>
+
+<p class="q">
+I'm using OrgMaker 2.1.0x English to compose an ORG file that I will insert into a Cave Story mod. What drums should I use?</p>
+
+<p>
+Use these drums</p>
+
+<ul>
+<li>Track Q: Bass01</li>
+<li>Track W: Snare01</li>
+<li>Track E: HiClose</li>
+<li>Track R: HiOpen</li>
+<li>Track T: Tom01</li>
+<li>Track Y: Per01</li>
+<li>Track U: Bass01 (and Track U must remain empty)</li>
+<li>Track I: Bass01 (and Track I must remain empty)</li>
+</ul>
+
+<p>In the Org210x.exe release dated 2016-03-04, when you make a new file, it will use these drums by default.</p>
+
+<h3>More information</h3>
+
+<p>
+Cave Story only uses the drum tracks Q to Y. Cave Story ignores the drum specified in the ORG file and always uses the hard-coded drum sounds above. By using the drums above when you compose, your ORG file will sound the same in OrgMaker 2.1.0x English as it will in Cave Story.</p>
+
+<p>
+Tracks U and I aren't used by Cave Story and must remain empty. If these tracks contain any notes, Cave Story will crash.</p>
+
+<p>
+If any drum track uses a drum that's incompatible with OrgMaker 1.3.4 (see the next section), the file header will change, and Cave Story won't play the ORG file at all. In OrgMaker 2.1.0 Japanese and in OrgMaker 2.1.0x English releases dated 2014-09-20 or before, when you start a blank file, every drum track defaults to a drum that's incompatible with OrgMaker 1.3.4. It's important to change Track U and I to an OrgMaker 1.3.4-compatible drum like Bass01 even though you have to leave these tracks empty. Otherwise Cave Story won't play the ORG file at all.</p>
+
+<hr size="1">
+
+<h2 id="org-maker-versions">Other OrgMaker versions</h2>
+
+<p class="q">When I compose in OrgMaker 2.1.0x English, will the drums work in other versions of OrgMaker?</p>
+
+<ul>
+<li><span class="ok">Green:</span> Will sound the same or very close to the same.</li>
+<li><span class="swap">Yellow:</span> Will sound different. (Swap fix available*)</li>
+<li><span class="diff">Orange:</span> Will sound different. (No fix available)</li>
+<li><span class="bad">Red:</span> OrgMaker won't load the file, or the file will cause OrgMaker to crash.</li>
+</ul>
+
+<p>* If it is important to you that it sound the same, when you are done composing in OrgMaker 2.1.0x English, make a copy of the file, and in the copied file make the change indicated in the table. Now the copied file played in the indicated OrgMaker version will sound the same as the original file played in OrgMaker 2.1.0x English.</p>
+
+
+<table>												
+<tr><th>	OrgMaker 2.1.0x English Drum Name	</th><th>	OrgMaker 2.1.0x English	</th><th>	OrgMaker 2.1.0 Japanese	</th><th>	OrgMaker 2.0.5x English	</th><th>	OrgMaker 2.0.5 Japanese	</th><th>	OrgMaker 1.3.4	</th></tr>
+<tr><th class="drum">	Bass01	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Bass04	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Bass04	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Bass02	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Bass03	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Bass04	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Bass01	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Bass01	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Bass05	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Bass06	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Bass07	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Bass08	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Bell	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Cat	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Clap01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Crash	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Crash02	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiClose	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiClose02	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiClose02	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	HiClose02	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiClose    	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiClose    	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiClose03	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiClose04	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiClose05	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiOpen	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiOpen02	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiOpen02	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	HiOpen02	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiOpen    	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to HiOpen    	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiOpen03	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	HiOpen04	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	OrcDrm01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Per01	</th><td class="ok">	OK	</td><td class="diff">	Sounds Different	</td><td class="diff">	Sounds Different	</td><td class="diff">	Sounds Different	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Per02	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Pesi01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Quick01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	RevSym01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Ride01	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare01	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Snare03	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Snare03	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Snare02	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Snare03	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Snare01	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Snare01	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare04	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare05	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare06	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare07	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Snare08	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Tom01	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Tom03	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Tom03	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Tom02	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td></tr>
+<tr><th class="drum">	Tom03	</th><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Tom01	</td><td class="ok">	OK	</td><td class="swap">	Sounds Different *change to Tom01	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Tom04	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Won't Load	</td></tr>
+<tr><th class="drum">	Tom05	</th><td class="ok">	OK	</td><td class="ok">	OK	</td><td class="bad">	Will Crash	</td><td class="bad">	Will Crash	</td><td class="bad">	Won't Load	</td></tr>
+</table>												
+
+<h3>More information</h3>
+
+<p>
+In Rxo Inverse's Japanese versions of OrgMaker 2, the Cave Story drums
+(Bass01, Snare01, HiClose, HiOpen, Tom01, and Per01) sound different than
+they do in Pixel's OrgMaker 1.3.4. Rxo Inverse moved the original sounds to
+new names (Bass04, Snare03, HiClose02, HiOpen02, and Tom03), except for Per01.
+(The original Per01 sound is not available in OrgMaker 2.0.5.)</p>
+
+<p>
+In the English translations of OrgMaker 2 by Xaser and Bavi_H, the original OrgMaker 1.3.4 drum
+sounds have been restored to their original names, and the new sounds moved
+to the new names.</p>
+
+<p>
+In OrgMaker 2.0.5x English, Per01 was still different from OrgMaker 1.3.4.</p>
+
+<p>
+In OrgMaker 2.1.0x English, Per01 has now been copied from OrgMaker 1.3.4,
+so it sounds the same again.</p>
+
+<hr size="1">
+
+</body>
+</html>
